@@ -2,7 +2,7 @@
 @section('title', 'Login account')
 @section('content')
     <div class="container">
-        <div class="mt-5 col-md-5 mx-auto">
+        <div class="mt-5 mx-auto" style="width: 500px">
             @if ($errors->any())
                 <div class="col-12">
                     @foreach ($errors->all() as $error)
