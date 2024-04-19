@@ -6,6 +6,7 @@ clone source code at htdoc
 install composer at https://getcomposer.org/download/
 # Open source code with vscode
 config your Database mysql to connect xampp at file **.env**
+# Config DB
 DB_CONNECTION=mysql
 DB_HOST=localhost
 DB_PORT=3309
