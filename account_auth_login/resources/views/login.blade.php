@@ -2,21 +2,38 @@
 @section('title', 'Login account')
 @section('content')
     <div class="container">
-        <form style="width: 500px" class="mx-auto">
+        <div class="mt-5 col-md-5 mx-auto">
+            @if ($errors->any())
+                <div class="col-12">
+                    @foreach ($errors->all() as $error)
+                        <div class="alert alert-danger">{{ $error }}</div>
+                    @endforeach
+                </div>
+            @endif
+
+            @if (session()->has('error'))
+                <div class="alert alert-danger">{{ session('error') }}</div>
+            @endif
+
+            @if (session()->has('success'))
+                <div class="alert alert-success">{{ session('success') }}</div>
+            @endif
+        </div>
+        <form style="width: 500px" class="mx-auto" action="{{ route('login.post') }}" method="POST">
+            @csrf
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                <label class="form-label">Email address</label>
+                <input type="email" class="form-control" name="email">
             </div>
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
+                <label class="form-label">Password</label>
+                <input type="password" class="form-control" name="password">
             </div>
             <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                <input type="checkbox" class="form-check-input">
+                <label class="form-check-label">Check me out</label>
             </div>
             <button type="submit" class="btn btn-primary">Đăng nhập</button>
         </form>
-    </div>cc
+    </div>
 @endsection
