@@ -14,11 +14,18 @@ class AuthManager extends Controller
     //Function dinh dang bieu mau cho chuc nang Login
     function login()
     {
+        if (Auth::check()) {
+            return redirect(route('home'));
+        }
         return view('login');
     }
 
+    //Function dinh dang bieu mau cho chuc nang Register
     function register()
     {
+        if (Auth::check()) {
+            return redirect(route('home'));
+        }
         return view('register');
     }
 
@@ -39,6 +46,7 @@ class AuthManager extends Controller
         return redirect(route('login'))->with("error", "Tài khoản đăng nhập không chính xác");
     }
 
+     //Chuc nang Register POST
     function registerPost(Request $request)
     {
         $request->validate([

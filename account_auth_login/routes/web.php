@@ -25,3 +25,10 @@ Route::get('/register', [AuthManager::class, 'register'])->name('register');
 Route::post('/register', [AuthManager::class, 'registerPost'])->name('register.post'); //API route Register
 
 Route::get('/logout', [AuthManager::class, 'logout'])->name('logout');
+
+//Them dieu kien xac nhan account da dang nhap moi cho truy cap route nay
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/profile', function () {
+        return "Hello Tôi Là Con Gà";
+    });
+});
