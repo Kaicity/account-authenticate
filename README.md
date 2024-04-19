@@ -8,10 +8,15 @@ install composer at https://getcomposer.org/download/
 config your Database mysql to connect xampp at file **.env**
 # Config DB
 DB_CONNECTION=mysql
+
 DB_HOST=localhost
+
 DB_PORT=3309
+
 DB_DATABASE=customer_login
+
 DB_USERNAME=root
+
 DB_PASSWORD=
 
 # Run Application
