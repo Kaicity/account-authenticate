@@ -14,5 +14,5 @@ DB_DATABASE=customer_login
 DB_USERNAME=root
 DB_PASSWORD=
 
-#Run Application
+# Run Application
 >php artisan serve
