@@ -12,7 +12,14 @@
             @endif
 
             @if (session()->has('error'))
-                <div class="alert alert-danger">{{ session('error') }}</div>
+                {{-- <div class="alert alert-danger">{{ session('error') }}</div> --}}
+                <script>
+                    // Make sure jQuery is ready before executing code
+                    $(document).ready(function() {
+                        // Trigger the modal
+                        $('#exampleModal').modal('show');
+                    });
+                </script>
             @endif
 
             @if (session()->has('success'))
@@ -36,4 +43,5 @@
             <button type="submit" class="btn btn-primary">Đăng nhập</button>
         </form>
     </div>
+    @include('include.modal-message')
 @endsection
