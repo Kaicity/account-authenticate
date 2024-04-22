@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Console\View\Components\Alert;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -46,7 +45,7 @@ class AuthManager extends Controller
         return redirect(route('login'))->with("error", "Tài khoản đăng nhập không chính xác");
     }
 
-     //Chuc nang Register POST
+    //Chuc nang Register POST
     function registerPost(Request $request)
     {
         $request->validate([
@@ -72,4 +71,5 @@ class AuthManager extends Controller
         Auth::logout();
         return redirect(route('login'));
     }
+
 }

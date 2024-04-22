@@ -1,8 +1,9 @@
 @extends('layout')
 @section('title', 'Registration')
 @section('content')
-    <div class="container">
-        <div class="mt-5 col-md-5 mx-auto">
+    <div  class="container pt-3 mt-5 py-5 border border-2 rounded-4"  style="width: 30%;">
+        <div class="mt-3 mx-auto" style="width: 500px">
+            <h2>Tạo tài khoản</h2>
             @if ($errors->any())
                 <div class="col-12">
                     @foreach ($errors->all() as $error)
@@ -19,7 +20,7 @@
                 <div class="alert alert-success">{{ session('success') }}</div>
             @endif
         </div>
-        <form style="width: 500px" class="mx-auto" action="{{ route('register.post') }}" method="POST">
+        <form style="max-width: 500px; margin: 0 auto;" class="mx-auto" action="{{ route('register.post') }}" method="POST">
             @csrf
             <div class="mb-3">
                 <label class="form-label">Tên đầy đủ</label>

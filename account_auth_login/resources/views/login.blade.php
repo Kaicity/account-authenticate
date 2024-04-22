@@ -1,8 +1,9 @@
 @extends('layout')
 @section('title', 'Login account')
 @section('content')
-    <div class="container">
-        <div class="mt-5 mx-auto" style="width: 500px">
+    <div class="container pt-3 mt-5 py-5 border border-2 rounded-4" style="max-width: 30%;">
+        <div class="mt-3 mx-auto" style="max-width: 500px">
+            <h2>Đăng nhập</h2>
             @if ($errors->any())
                 <div class="col-12">
                     @foreach ($errors->all() as $error)
@@ -14,10 +15,10 @@
             @if (session()->has('error'))
                 {{-- <div class="alert alert-danger">{{ session('error') }}</div> --}}
                 <script>
-                    // Make sure jQuery is ready before executing code
-                    $(document).ready(function() {
+                    $(document).ready(function () {
                         // Trigger the modal
                         $('#exampleModal').modal('show');
+
                     });
                 </script>
             @endif
@@ -26,7 +27,7 @@
                 <div class="alert alert-success">{{ session('success') }}</div>
             @endif
         </div>
-        <form style="width: 500px" class="mx-auto" action="{{ route('login.post') }}" method="POST">
+        <form style="max-width: 500px; margin: 0 auto;" action="{{ route('login.post') }}" method="POST">
             @csrf
             <div class="mb-3">
                 <label class="form-label">Email address</label>
